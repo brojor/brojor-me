@@ -25,11 +25,8 @@ body {
   background-color: #181818;
 }
 .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
   text-align: center;
+  margin-top: 20vh;
 }
 h1 {
   font-family: 'M PLUS Rounded 1c', sans-serif;
