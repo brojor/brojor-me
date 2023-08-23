@@ -1,6 +1,6 @@
 <template>
-	<div id="cards">
-		<div class="card" v-for="(card, i) in 6" :key="i" @mousemove="onMouseMove">
+	<div id="cards" @mousemove="onMouseMove">
+		<div class="card" v-for="(card, i) in 6" :key="i">
 			<div class="card-border"></div>
 			<div class="card-content"></div>
 		</div>
@@ -9,23 +9,16 @@
 
 
 <script setup lang="ts">
-import { reactive } from 'vue';
-
-const coords = reactive({
-	x: "0px",
-	y: "0px",
-})
 
 const onMouseMove = (ev: MouseEvent) => {
 	const target = ev.currentTarget as HTMLElement
-	const rect = target.getBoundingClientRect()
 
-	coords.x = `${ev.clientX - rect.left}px`
-	coords.y = `${ev.clientY - rect.top}px`
-
-	console.log(coords);
+	for(const card of target.children as HTMLCollectionOf<HTMLElement>) {
+		const rect = card.getBoundingClientRect()
+		card.style.setProperty('--mouse-x', `${ev.clientX - rect.left}px`)
+		card.style.setProperty('--mouse-y', `${ev.clientY - rect.top}px`)
+	}
 }
-
 </script>
 
 
@@ -36,6 +29,10 @@ const onMouseMove = (ev: MouseEvent) => {
 	max-width: 916px;
 	gap: 8px;
 	width: calc(100% - 20px);
+}
+
+#cards:hover > .card > .card-border {
+	opacity: 1;
 }
 
 .card {
@@ -62,21 +59,20 @@ const onMouseMove = (ev: MouseEvent) => {
 }
 
 .card::before {
-	background: radial-gradient(800px circle at v-bind('coords.x') v-bind('coords.y'),
+	background: radial-gradient(800px circle at var(--mouse-x) var(--mouse-y),
 			rgba(255, 255, 255, 0.06),
 			transparent 40%);
 	z-index: 3;
 }
 
 .card > .card-border {
-	background: radial-gradient(400px circle at v-bind('coords.x') v-bind('coords.y'),
+	background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y),
 			rgba(255, 255, 255, 0.3),
 			transparent 40%);
 	z-index: 1;
 }
 
-.card:hover::before,
-.card:hover .card-border {
+.card:hover::before {
 	opacity: 1;
 }
 
