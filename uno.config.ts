@@ -1,7 +1,7 @@
 import { defineConfig } from 'unocss'
 
 import presetIcons from '@unocss/preset-icons'
-import cards from './cards'
+import cards from './src/cards'
 
 export default defineConfig({
   presets: [
