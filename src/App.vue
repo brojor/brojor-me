@@ -3,9 +3,8 @@
 		<div class="card" v-for="(card, i) in cards" :key="i">
 			<div class="card-border"></div>
 			<div class="card-content">
-				<div class="logo">
 					<i :class="`i-${card.icon}`"></i>
-				</div>	
+					<p>{{ card.title }}</p>
 			</div>
 		</div>
 	</div>
@@ -31,7 +30,7 @@ const onMouseMove = (ev: MouseEvent) => {
 #cards {
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 766px;
+	max-width: 716px;
 	gap: 4px;
 	width: calc(100% - 20px);
 }
@@ -41,8 +40,8 @@ const onMouseMove = (ev: MouseEvent) => {
 }
 
 .card {
-	height: 130px;
-	width: 150px;
+	height: 125px;
+	width: 140px;
 	background-color: rgba(255, 255, 255, 0.02);
 	border-radius: 10px;
 	border: 1px solid rgba(255, 255, 255, 0.1);
@@ -64,14 +63,14 @@ const onMouseMove = (ev: MouseEvent) => {
 }
 
 .card::before {
-	background: radial-gradient(400px circle at var(--mouse-x) var(--mouse-y),
-			rgba(255, 255, 255, 0.06),
+	background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y),
+			rgba(255, 255, 255, 0.08),
 			transparent 40%);
 	z-index: 3;
 }
 
 .card>.card-border {
-	background: radial-gradient(200px circle at var(--mouse-x) var(--mouse-y),
+	background: radial-gradient(150px circle at var(--mouse-x) var(--mouse-y),
 			rgba(255, 255, 255, 0.3),
 			transparent 40%);
 	z-index: 1;
@@ -79,6 +78,10 @@ const onMouseMove = (ev: MouseEvent) => {
 
 .card:hover::before {
 	opacity: 1;
+}
+
+.card:hover i {
+	filter: saturate(1);
 }
 
 .card .card-content {
@@ -91,17 +94,25 @@ const onMouseMove = (ev: MouseEvent) => {
 	position: relative;
 	display: flex;
 	align-items: center;
-}
-
-.logo {
-	width: 50px;
-	height: 50px;
-	margin: auto;
+	flex-direction: column;
 }
 
 i {
 	display: block;
-	width: 100%;
-	height: 100%;
+	width: 45px;
+	height: 45px;
+	margin: auto;
+	filter: saturate(0);
+	transition: filter 0.3s ease-in-out;
+}
+
+p {
+	margin: 0;
+	margin-bottom: 1rem;
+	font-size: 14px;
+	font-weight: 500;
+	color: #fff;
+	text-align: center;
+	font-family: 'Exo 2', sans-serif;
 }
 </style>
