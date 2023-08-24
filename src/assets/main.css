@@ -3,6 +3,7 @@
 :root {
   --bg-color: rgb(20, 20, 20);
   --card-color: rgb(23, 23, 23);
+  --primary-rgb: 66 211 146;
 }
 
 *, *:before, *:after {
@@ -13,13 +14,13 @@ body {
   background-color: var(--bg-color);
   margin: 0;
   padding: 0;
-  overflow: hidden; 
+  /* overflow: hidden;  */
 
 }
 
 #app {
   align-items: center;
   display: flex;
-  height: 100vh;
   justify-content: center;
+  flex-direction: column;
 }
