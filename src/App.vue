@@ -1,9 +1,17 @@
 <template>
-	<div class="screen">
-		<div class="screen-image" />
-		<div class="screen-overlay"></div>
-		<div class="screen-content"></div>
-	</div>
+	<section>
+		<div class="screen">
+			<div class="screen-image" />
+			<div class="screen-overlay"></div>
+			<div class="screen-content"></div>
+		</div>
+		<h1>Hi,
+			<br>
+			I'm <span>Brojor</span>,
+			<br>
+			web developer
+		</h1>
+	</section>
 	<IconCards />
 </template>
 
@@ -16,11 +24,30 @@ import IconCards from './components/IconCards.vue';
 
 
 <style scoped>
+section {
+	display: flex;
+	width: 716px;
+	margin: 2rem;
+}
+
+h1 {
+	font-size: 3.5rem;
+	color: #fff;
+	margin: auto;
+}
+
+h1 span {
+	background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
 .screen {
-	width: 300px;
+	width: 200px;
 	border: 2px solid rgb(var(--primary-rgb)/80%);
 	aspect-ratio: 10/16;
-	border-radius: 1rem;
+	border-radius: 10px;
 	background-color: rgb(var(--primary-rgb)/15%);
 	overflow: hidden;
 	position: relative;
@@ -38,7 +65,7 @@ import IconCards from './components/IconCards.vue';
 	top: 0px;
 	background-size: 150%;
 	background-position: 60% 100%;
-	filter: sepia(1) hue-rotate(118deg);
+	filter: sepia(1) hue-rotate(150deg);
 	opacity: 0.8;
 }
 
@@ -57,7 +84,7 @@ import IconCards from './components/IconCards.vue';
 			rgb(var(--primary-rgb) / 0.15) 3px,
 			transparent 3px,
 			transparent 6px);
-	background-size: 100% 9px;
+	background-size: 100% 6px;
 	height: 100%;
 	width: 100%;
 	animation: pan-overlay 22s infinite linear;
@@ -76,10 +103,10 @@ import IconCards from './components/IconCards.vue';
 	gap: 4rem;
 	position: relative;
 	z-index: 3;
-	margin: 1rem;
+	margin: 10px;
 	padding-bottom: 6rem;
 	border: 1px solid rgb(var(--primary-rgb) / 70%);
-	border-radius: 0.6rem;
+	border-radius: 6px;
 }
 
 .screen:after,
