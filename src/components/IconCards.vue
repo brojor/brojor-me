@@ -30,9 +30,9 @@ const onMouseMove = (ev: MouseEvent) => {
 #cards {
 	display: flex;
 	flex-wrap: wrap;
-	max-width: 716px;
+	/* max-width: 716px; */
 	gap: 4px;
-	width: calc(100% - 20px);
+	/* width: calc(100% - 20px); */
 }
 
 #cards:hover>.card>.card-border {

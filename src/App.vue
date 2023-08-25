@@ -1,18 +1,21 @@
 <template>
-	<section>
+	<section class="hero">
+		<div class="hero-text">
+			<h1>Hi, <br> I'm <span>Brojor</span>, <br> web developer </h1>
+			<p>I like to create amazing things using web technologies</p>
+		</div>
 		<div class="screen">
 			<div class="screen-image" />
 			<div class="screen-overlay"></div>
 			<div class="screen-content"></div>
 		</div>
-		<h1>Hi,
-			<br>
-			I'm <span>Brojor</span>,
-			<br>
-			web developer
-		</h1>
 	</section>
-	<IconCards />
+	<section>
+		<h2>
+			Skills and experience:
+		</h2>
+		<IconCards />
+	</section>
 </template>
 
 
@@ -25,23 +28,45 @@ import IconCards from './components/IconCards.vue';
 
 <style scoped>
 section {
+	width: calc(100% - 20px);
+	max-width: 716px;
+	margin: 3.5rem auto;
+}
+.hero {
 	display: flex;
-	width: 716px;
-	margin: 2rem;
+	max-width: 716px;
+	justify-content: space-between;
+}
+
+.hero-text {
+	display: flex;
+	flex-direction: column;
+	width: 75%;
+	justify-content: flex-end;
+}
+
+.hero p {
+	font-size: 1.5rem;
+	margin: auto;
+	font-family: 'Roboto Mono', monospace;
+	color: #979797;
 }
 
 h1 {
 	font-size: 3.5rem;
 	color: #fff;
-	margin: auto;
+	margin: 0;
+	line-height: 1.1;
 }
 
-h1 span {
+h1 span{
 	background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+
+
 
 .screen {
 	width: 200px;
