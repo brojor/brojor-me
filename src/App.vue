@@ -34,27 +34,26 @@ onMounted(() => {
 
 <style scoped>
 section {
-	width: calc(100% - 20px);
+	width: calc(100% - 100px);
 	max-width: 716px;
 	margin: 3.5rem auto;
 }
 
 .hero {
 	display: flex;
-	max-width: 716px;
-	justify-content: space-between;
+	margin-top: 7rem;
 }
 
 .hero-text {
 	display: flex;
 	flex-direction: column;
-	width: 75%;
-	justify-content: flex-end;
+	justify-content: space-between;
+	padding-right: 5rem;
 }
 
 .hero p {
 	font-size: 1.5rem;
-	margin: auto;
+	margin: 0;
 	font-family: 'Roboto Mono', monospace;
 	color: #979797;
 }
@@ -72,6 +71,5 @@ h1 span {
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
-	
 }
 </style>

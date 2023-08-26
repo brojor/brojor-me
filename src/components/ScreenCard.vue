@@ -14,9 +14,9 @@
 
 <style scoped>
 .screen {
-	width: 200px;
-	border: 2px solid rgb(var(--primary-rgb)/80%);
-	aspect-ratio: 10/16;
+	min-width: 180px;
+	border: 1px solid rgb(var(--primary-rgb)/80%);
+	aspect-ratio: 2/3;
 	border-radius: 10px;
 	background-color: rgb(var(--primary-rgb)/15%);
 	overflow: hidden;
@@ -62,45 +62,5 @@
 	z-index: 2;
 	left: 0px;
 	top: 0px;
-}
-
-.screen>.screen-content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: flex-end;
-	flex-grow: 1;
-	gap: 4rem;
-	position: relative;
-	z-index: 3;
-	margin: 10px;
-	padding-bottom: 6rem;
-	border: 1px solid rgb(var(--primary-rgb) / 70%);
-	border-radius: 6px;
-}
-
-.screen:after,
-.screen:before {
-	content: "";
-	height: 3px;
-	position: absolute;
-	z-index: 4;
-	left: 50%;
-	translate: -50% 0%;
-	background-color: white;
-}
-
-.screen:before {
-	width: 15%;
-	top: 0rem;
-	border-bottom-left-radius: 1rem;
-	border-bottom-right-radius: 1rem;
-}
-
-.screen:after {
-	width: 25%;
-	bottom: 0rem;
-	border-top-left-radius: 1rem;
-	border-top-right-radius: 1rem;
 }
 </style>
