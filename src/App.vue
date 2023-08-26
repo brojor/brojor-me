@@ -1,10 +1,10 @@
 <template>
 	<section class="hero">
 		<div class="hero-text">
-			<h1>Hi, <br> I'm <span>Brojor</span>, <br> web developer </h1>
+			<h1>Hi, <br> I'm <span ref="username">Brojor</span>, <br> web developer </h1>
 			<p>I like to create amazing things using web technologies</p>
 		</div>
-    <ScreenCard />
+		<ScreenCard />
 	</section>
 	<section>
 		<h2>
@@ -16,8 +16,17 @@
 
 
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import IconCards from './components/IconCards.vue';
 import ScreenCard from './components/ScreenCard.vue';
+import { useHackerText } from './composables/useHackerText';
+
+const username = ref<HTMLElement | null>(null)
+
+onMounted(() => {
+	const { shuffleLetters } = useHackerText(username.value!)
+	shuffleLetters()
+})
 
 
 </script>
@@ -29,6 +38,7 @@ section {
 	max-width: 716px;
 	margin: 3.5rem auto;
 }
+
 .hero {
 	display: flex;
 	max-width: 716px;
@@ -56,14 +66,12 @@ h1 {
 	line-height: 1.1;
 }
 
-h1 span{
+h1 span {
+	font-family: 'Roboto Mono', monospace;
 	background: -webkit-linear-gradient(315deg, #42d392 25%, #647eff);
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	
 }
-
-
-
-
 </style>
