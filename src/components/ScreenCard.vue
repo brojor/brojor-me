@@ -14,7 +14,7 @@
 
 <style scoped>
 .screen {
-	min-width: 180px;
+	min-width: 25%;
 	border: 1px solid rgb(var(--primary-rgb)/80%);
 	aspect-ratio: 2/3;
 	border-radius: 10px;
@@ -22,6 +22,12 @@
 	overflow: hidden;
 	position: relative;
 	display: flex;
+}
+
+@media screen and (max-width: 750px) {
+	.screen {
+		display: none;
+	}
 }
 
 .screen>.screen-image {

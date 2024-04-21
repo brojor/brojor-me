@@ -42,13 +42,15 @@ section {
 .hero {
 	display: flex;
 	margin-top: 7rem;
+	justify-content: space-between;
+	aspect-ratio: 179/68;
 }
 
 .hero-text {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding-right: 5rem;
+	max-width: 430px;
 }
 
 .hero p {
@@ -56,6 +58,7 @@ section {
 	margin: 0;
 	font-family: 'Roboto Mono', monospace;
 	color: #979797;
+	margin-top: 1.5rem;
 }
 
 h1 {
@@ -71,5 +74,18 @@ h1 span {
 	background-clip: text;
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 550px) {
+	h1 {
+		font-size: 10vw;
+	}
+	.hero p {
+		font-size: 4.3vw;
+		margin-top: 4vw;
+	}
+	section {
+		width: calc(100% - 50px);
+	}
 }
 </style>

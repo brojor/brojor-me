@@ -3,8 +3,8 @@
 		<div class="card" v-for="(card, i) in cards" :key="i">
 			<div class="card-border"></div>
 			<div class="card-content">
-					<i :class="`i-${card.icon}`"></i>
-					<p>{{ card.title }}</p>
+				<i :class="`i-${card.icon}`"></i>
+				<p>{{ card.title }}</p>
 			</div>
 		</div>
 	</div>
@@ -30,9 +30,7 @@ const onMouseMove = (ev: MouseEvent) => {
 #cards {
 	display: flex;
 	flex-wrap: wrap;
-	/* max-width: 716px; */
 	gap: 4px;
-	/* width: calc(100% - 20px); */
 }
 
 #cards:hover>.card>.card-border {
@@ -114,5 +112,26 @@ p {
 	color: #fff;
 	text-align: center;
 	font-family: 'Exo 2', sans-serif;
+}
+
+@media (max-width: 816px) {
+	#cards {
+		max-width: 816px;
+	}
+
+	.card {
+		flex-shrink: 1;
+		width: calc(25% - 3px);
+	}
+}
+
+@media (pointer: coarse) {
+	i {
+		filter: none;
+	}
+
+	#cards{
+		pointer-events: none;
+	}
 }
 </style>
